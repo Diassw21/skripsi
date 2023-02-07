@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="card bg-white">
+        <div class="container p-3">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none" style="color:#000; font-weight: 600; font-size: 30px;">
+                    {{ session.Username }}
+                </a>
+                <div class="col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"></div>
+                <div class="text-end">
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="{{url_for('home')}}" class="nav-link px-2 text-dark">Home</a></li>
+                        <li><a href="{{url_for('about')}}" class="nav-link px-2 text-dark">About</a></li>
+                        <li><a href="{{url_for('image_classify')}}" class="nav-link px-2 text-dark">image</a></li>
+                        <li><a href="{{url_for('webcam_classify')}}" class="nav-link px-2 text-dark">webcam</a></li>
+                        {% if session.logged_in %}
+                        <li><a href="{{url_for('logout')}}" class="nav-link px-2 text-dark">Logout</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="mx-auto my-3" style="max-width: 900px;">
+            <div class="row">
+                <div class="text-description mb-5">
+                    <h1>Bakteri</h1>
+                    <br>
+                    <img src={{ url_for('static', filename='/images/bakeri.jpg') }} width="170"></img>
+                    <br>
+                    <br>
+                    <p>Gejala yang ditimbulkan bakteri penyebab penyakit tomat ini adalah adanya bercak-bercak kecil yang berair pada batang dan daun tanaman tomat. 
+                       Bercak tersebut akan mengering dan membentuk cekungan yang berwarna coklat ke abu-abuan dengan diameter 1-5 mm.
+                       Tanaman tomat yang mendapat serangan dari bakteri ini daunnya akan mengering dan keriting kebawah.
+                       Tanaman yang terinfeksi penyakit tomat ini batangnya menyerupai kerak yang panjang dengan warna keabu-abuan Sedangkan daun yang terserang 
+                       penyakit tomat ini akan mengalami klorosis dan rontok atau gugur. 
+                       Lain halnya jika yang terserang adalah buah, jika pada buah yang terserang bakteri maka akan muncul bercak berair yang kemudian akan berubah menjadi bercak bergabus.
+                    </p>
+                    <br>
+                    <p>Pengendalian:
+                      Merotasi tanaman dengan tanaman yang familinya berbeda, menanam benih dari biji tomat yang sehat, menanam bibit tomat yang memiliki ketahanan terhadap hama dan penyakit, 
+                      tanaman yang sakit sebaiknya dicabut dan dibakar di areal yang jauh dari lahan penanaman, tanaman yang mati sebaiknya jangan dipendam di lahan penanaman, 
+                      menyiram tanaman dengan menggunakan air yang bersih dan terbebas dari penyakit, jika tanaman tomat sudah terserang penyakit maka akan sangat sulit untuk mengendalikannya. 
+                      Untuk itu harus segera dilakukan pencegahan sebelum penyakit  tomat datang menyerang tanaman. Pencegahan paling sederhana yang bisa dilakukan adalah dengan selalu menjaga kebersihan lingkungan sekitar kebun tomat.
+                      Semprotkan pula cairan insektisida dan fungisida untuk pencegahan terjadinya penyakit tomat.
+                    </p>
+                    <br>
+                    <h1>Busuk daun</h1>
+                    <br><img src={{ url_for('static', filename='/images/busukdaun.jpg') }} width="170"></img>
+                    <br>
+                    <br>
+                    <p>Gejala : Daun yang terserang akan timbul bercak berwarna coklat hingga hitam. Awalnya pada sisi daun atau ujung daun hanya tampak beberapa milimeter saja.
+                       Namun akhirnya meluas keseluruh bagian daun hingga tangkai daun. 
+                       Penyakit tomat busuk daun ini menyerang pangkal daun, menimbulkan bercak berwarna hijau hingga coklat dan berair.
+                    </p>
+                    <p>Pengendalian:
+                       Mencabut kemudian membakar tanaman yang terinfeksi penyakit, tanaman yang berpenyakit jangan dipendam dan juga jangan di tumpuk di daerah penanaman tomat, 
+                       menanam benih yang resisten terhadap hama dan penyakit, menggunakan sistem penanaman tumpangsari atau di rotasi dengan tanaman jenis lain, setelah di cangkul, tanah dibiarkan beberapa lama supaya mendapat sinar matahari, semprotkan fungisida.
+                    </p>
+                    <br>
+                    <h1>Sehat</h1>
+                    <br>
+                    <img src={{ url_for('static', filename='/images/sehat.jpg') }} width="170"></img>
+                    <br>
+                    <br>
+                    <p>Tanaman tomat mempunyai anatomi daun yang berbentuk oval dan terdapat gerigi pada bagian tepinya. 
+                       Bentuk pada daun tanaman tomat cenderung menyirip dan juga melengkup di bagian dalamnya.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
